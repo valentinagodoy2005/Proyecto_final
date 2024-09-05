@@ -106,8 +106,11 @@ tk.Entry(root, textvariable=user_var).grid(row=1, column=1, padx=10, pady=5)
 tk.Label(root, text="Contraseña:").grid(row=2, column=0, padx=10, pady=5)
 tk.Entry(root, textvariable=password_var, show="*").grid(row=2, column=1, padx=10, pady=5)
 
+# Botón para guardar la configuración
+tk.Button(root, text="Guardar Configuración", command=save_config).grid(row=3, column=0, columnspan=2, pady=10)
+
 # Botón para mostrar las bases de datos
-tk.Button(root, text="Mostrar Bases de Datos", command=show_databases).grid(row=3, column=0, columnspan=2, pady=10)
+tk.Button(root, text="Mostrar Bases de Datos", command=show_databases).grid(row=3, column=2, columnspan=2, pady=10)
 
 # Combobox para seleccionar la base de datos
 tk.Label(root, text="Base de Datos:").grid(row=4, column=0, padx=10, pady=5)
@@ -121,7 +124,7 @@ backup_menu = ttk.OptionMenu(root, backup_var, backup_options[0], *backup_option
 backup_menu.grid(row=5, column=1, padx=10, pady=5)
 
 # Botón para guardar la configuración
-tk.Button(root, text="Guardar Configuración", command=save_config).grid(row=6, column=0, columnspan=2, pady=10)
+tk.Button(root, text="Generar Backup Ahora", command=perform_backup).grid(row=6, column=0, columnspan=10, pady=20)
 
 def perform_backup():
     config = configparser.ConfigParser()
