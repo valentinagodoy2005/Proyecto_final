@@ -3,11 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descargar Backup Program</title>
+    <title>Descargar Programa de Backups</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .download-link {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #28a745;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .download-link:hover {
+            background-color: #218838;
+        }
+        .docker-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .docker-section h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .docker-section ol {
+            font-size: 1.1rem;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+        footer p {
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
-    <h1>Descargar Programa de Backups</h1>
-    <p>Haz clic en el siguiente enlace para descargar el programa:</p>
-    <a href="https://valentinagodoy2005.github.io/Proyecto_final/dist.rar" download>Descargar Programa de Backups</a>
+
+    <header>
+        <h1>Descargar Programa de Backups</h1>
+        <p>Administra tus bases de datos fácilmente con este programa.</p>
+    </header>
+
+    <div class="container">
+        <p>Haz clic en el siguiente botón para descargar el programa:</p>
+        <a href="https://valentinagodoy2005.github.io/Proyecto_final/dist.rar" class="download-link" download>Descargar Programa de Backups</a>
+
+        <div class="docker-section">
+            <h2>Guía para ejecutar el programa con Docker</h2>
+            <p>Si prefieres utilizar Docker para un entorno más controlado y sin problemas de dependencias, sigue los pasos a continuación:</p>
+            <ol>
+                <li><strong>Paso 1:</strong> Clona el repositorio de GitHub en tu máquina local:
+                    <pre><code>git clone https://github.com/tu_usuario/tu_repositorio.git</code></pre>
+                </li>
+                <li><strong>Paso 2:</strong> Ve al directorio del proyecto:
+                    <pre><code>cd tu_repositorio</code></pre>
+                </li>
+                <li><strong>Paso 3:</strong> Construye la imagen Docker:
+                    <pre><code>docker build -t mi_proyecto_python .</code></pre>
+                </li>
+                <li><strong>Paso 4:</strong> Ejecuta el contenedor:
+                    <pre><code>docker run -it mi_proyecto_python</code></pre>
+                </li>
+            </ol>
+            <p>Con estos simples pasos, tendrás el proyecto ejecutándose dentro de un contenedor Docker, garantizando un entorno limpio y consistente.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Proyecto Backup - Todos los derechos reservados</p>
+    </footer>
+
 </body>
 </html>
