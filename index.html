@@ -88,25 +88,28 @@
         <a href="https://valentinagodoy2005.github.io/Proyecto_final/dist.rar" class="download-link" download>Descargar Programa de Backups</a>
 
         <div class="docker-section">
-            <h2>Guía para ejecutar el programa con Docker</h2>
-            <p>Si prefieres utilizar Docker para un entorno más controlado y sin problemas de dependencias, sigue los pasos a continuación:</p>
+            <h2>Guía para ejecutar el servidor MySQL con Docker</h2>
+            <p>Sigue estos pasos para ejecutar un contenedor Docker que lance un servidor MySQL de prueba:</p>
             <ol>
-                <li><strong>Paso 1:</strong> Clona el repositorio de GitHub en tu máquina local:
-                    <pre><code>git clone https://github.com/tu_usuario/tu_repositorio.git</code></pre>
+                <li><strong>Paso 1:</strong> Asegúrate de tener Docker instalado en tu máquina.</li>
+                <li><strong>Paso 2:</strong> Ejecuta el siguiente comando en tu terminal para lanzar el servidor MySQL:
+                    <pre><code>docker run --name mysql-backup-test -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=testdb -p 3306:3306 -d mysql:latest</code></pre>
+                    Esto creará un contenedor con MySQL, con el puerto 3306 abierto en tu máquina local.
                 </li>
-                <li><strong>Paso 2:</strong> Ve al directorio del proyecto:
-                    <pre><code>cd tu_repositorio</code></pre>
+                <li><strong>Paso 3:</strong> Conéctate al servidor MySQL utilizando las siguientes credenciales en tu programa de backups:
+                    <ul>
+                        <li><strong>Host:</strong> localhost</li>
+                        <li><strong>Usuario:</strong> root</li>
+                        <li><strong>Contraseña:</strong> root</li>
+                        <li><strong>Base de datos:</strong> testdb</li>
+                    </ul>
                 </li>
-                <li><strong>Paso 3:</strong> Construye la imagen Docker:
-                    <pre><code>docker build -t mi_proyecto_python .</code></pre>
-                </li>
-                <li><strong>Paso 4:</strong> Ejecuta el contenedor:
-                    <pre><code>docker run -it mi_proyecto_python</code></pre>
+                <li><strong>Paso 4:</strong> Ahora puedes usar el programa de backups para gestionar esta base de datos de ejemplo.</li>
+                <li><strong>Paso 5:</strong> Cuando hayas terminado, puedes detener y eliminar el contenedor con:
+                    <pre><code>docker stop mysql-backup-test && docker rm mysql-backup-test</code></pre>
                 </li>
             </ol>
-            <p>Con estos simples pasos, tendrás el proyecto ejecutándose dentro de un contenedor Docker, garantizando un entorno limpio y consistente.</p>
         </div>
-    </div>
 
 </body>
 </html>
